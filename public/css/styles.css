@@ -1,0 +1,256 @@
+@import 'https://fonts.googleapis.com/css?family=Poppins:200,400,500,600,700&display=swap';
+@import '@material/chips/mdc-chips';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+p, h1, h2, h3, h4, span {
+  color: #333
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #efefef;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #bbb4;
+  padding: 0.75rem;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  padding: 0.75rem;
+  border-radius: 5px;
+  font-weight: 500;
+  background: #7c45cf;
+  color: #ffffff;
+  font-size: 15px;
+}
+.validation-error,
+.alert.error {
+  color: #E51313;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.login-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.alert {
+  padding: 1rem;
+  border-radius: 8px;
+  width: 350px;
+  max-width: 350px;
+  margin-bottom: 1rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.05);
+}
+.alert h3{
+  margin-right: 0.5rem;
+}
+.alert p {
+  font-weight: 500;
+}
+.alert p h3 {
+  display: flex;
+}
+
+.alert-error{
+  background: #dc3545;
+}
+
+.login-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 350px;
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.05);
+}
+
+.login-form h2 {
+  margin-bottom: 1rem;
+}
+
+.login-form input + button,
+.login-form input + input {
+  margin-top: 0.5rem;
+}
+.hidden-form {
+  visibility: hidden;
+  height: 0;
+}
+
+header {
+  background: #fff;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,
+  0, 0, 0.04);
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav h4 {
+  padding-right: 1rem;
+}
+header button{
+  width: auto;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  color: #e45a68
+}
+header button:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+.container{
+  padding: 1rem;
+}
+.content-header{
+  display: flex;
+}
+.content-header form{
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  grid-template-columns: 8fr 1fr;
+  column-gap: 0.5rem;
+}
+.content-header form input{
+  width: 79%;
+}
+.content-header form button {
+  width: 20%;
+}
+
+.card .card-form textarea{
+  min-width: 100%;
+  max-width: 100%;
+  /* max-width: auto; */
+  max-height: 100px;
+  min-height: 100px;
+}
+.card form h2 {
+  padding-bottom: 10px;
+}
+.card form input {
+  padding-bottom: 10px;
+}
+.card form textarea {
+  margin-top: 5px;
+  border: 1px solid #bbb4;
+  resize: none;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+.card form button {
+  margin-top: 10px;
+}
+
+.document-box {
+  display: flex;
+  justify-content: initial;
+  flex-wrap: wrap;
+  align-items: flex-end;
+
+}
+.document-box .box {
+  display: flex;
+  background-color: #9f9f9f;
+  max-width: 300px;
+  min-width: 300px;
+  max-height: 300px;
+  min-height: 200px;
+  flex-direction: column;
+  margin-top: 1rem;
+  flex-shrink : 1;
+  border-radius: 5px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 1rem;
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.11);
+
+}
+
+.document-box .box .img-text{
+  display: flex;
+}
+
+
+
+.document-box .tag-button a {
+
+    display: inline-flex;
+    flex-direction: row;
+    background-color: #e5e5e5;
+    cursor: default;
+    height: 20px;
+    font-size: 12px;
+    white-space: nowrap;
+    align-items: center;
+    border-radius: 16px;
+    vertical-align: middle;
+    justify-content: initial;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.document-box h5 {
+  margin-top: 0.5rem;
+
+}
+.document-box img {
+  margin-top: 0.5rem;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.document-box h5,.description {
+  flex: 1;
+  width: 100%;
+  margin-left: 5px;
+  max-width: 240px;
+  max-height: 70px;
+  overflow: hidden;
+
+
+}
+.document-box a {
+  max-width: 140px;
+  margin-left: 5px;
+}
+
+.doc-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.doc-footer img {
+  width: 20px;
+  height: 20px;
+}
