@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="login-container">
+
+    @if(flashMessages.get('error'))
+      <div class="alert alert-error">
+      <h3>Erro!<h3>
+      <p>{{flashMessages.get('error')}}<p>
+      </div>
+    @endif
+
+    <form class="login-form" method="post" action="{{ route('sessions.store') }}">
+      <h2>Login</h2>
+
+      <input placeholder="Email" type="text" name="email">
+      <input placeholder="Senha" type="password" name="password">
+
+      <button>Entrar</button>
+    </form>
+  </div>
+</body>
+</html>

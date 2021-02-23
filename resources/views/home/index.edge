@@ -1,0 +1,43 @@
+@layout('layouts/master')
+
+@section('content')
+  <div class="content-header">
+    <form action="/" method="get">
+      <input value="{{request.get().search || ''}}" type="text" name="search" placeholder="Search">
+      <button>Procurar</button>
+    </form>
+    </div>
+    <div>
+      @if(session.get('documents'))
+      <div class="document-box">
+        @each(document in session.get('documents') )
+          <div class="box">
+              <div class="img-text">
+                <img src="assets/pdf.svg" />
+                  <div class="text">
+                    <h5> {{ document.title }} </h5>
+                    <div class="description" style="font-size: 12px"> {{ document.description }} </div>
+                    <div class="tag-button">
+                      @each(tag in  document.tags.split(',') )
+                      <a style="text-decoration: none;
+                      @if(tag.length > 1)
+                      padding: 2px
+                      @endif
+                      " href="{{route('home.index')}}?search={{tag}}">{{ tag }}</a>
+                      @endeach
+                      </div>
+                  </div>
+              </div>
+
+            <div class="doc-footer">
+              <a href="{{route('documents.download')}}?pathUrl={{document.file.pathUrl}}">Acessar PDF</a>
+              <a style="margin-right: 0.7rem" href="{{route('documents.edit', { id: document.id })}}"><img src="assets/edit.svg"></a>
+            </div>
+          </div>
+        @endeach
+
+        </div>
+      @endif
+    </div>
+
+@endsection
