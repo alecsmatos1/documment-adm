@@ -1,0 +1,22 @@
+@layout('layouts/master')
+
+@section('content')
+  @if(session.get('documents'))
+  @each(document in session.get('documents'))
+  <div class="card">
+    <form class="card-form" enctype="multipart/form-data" action="{{route('documents.update',{ id: document.id })}}?_method=PUT" method="POST">
+      <h2>Novo Documento</h2>
+      <input value="{{document.title}}" type="text" placeholder="Titulo" name="title">
+      <textarea rows="10" cols="40"  maxlength="500" name="description" placeholder="Descrição" >{{document.description}}</textarea>
+      <input value="{{document.tags}}"type="text" placeholder="Tags" name="tags">
+      <input type="file" name="file">
+      <button >Atualizar</button>
+    </form>
+  </div>
+  @endeach
+  @endif
+  @if(!session.get('documents'))
+  <h2>Documento não encontrado</h2>
+  @endif
+
+@endsection

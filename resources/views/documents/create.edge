@@ -1,0 +1,20 @@
+@layout('layouts/master')
+
+@section('content')
+
+
+  <div class="card">
+    <form class="card-form" enctype="multipart/form-data" action="{{route('documents.store')}}" method="post">
+      <h2>Novo Documento</h2>
+      <input type="text" placeholder="Titulo" name="title">
+      <span class="validation-error">{{ flashMessages.get('errors.title') || '' }}</span>
+      <textarea rows="10" cols="40"  maxlength="500" name="description" placeholder="Descrição" ></textarea>
+      <span class="validation-error">{{ flashMessages.get('errors.description') || '' }}</span>
+      <input type="text" placeholder="Tags" name="tags">
+      <span class="validation-error">{{ flashMessages.get('errors.tags') || '' }}</span>
+      <input type="file" name="file">
+      <span class="validation-error">{{ flashMessages.get('errors.file') || '' }}</span>
+      <button>Salvar</button>
+    </form>
+  </div>
+@endsection

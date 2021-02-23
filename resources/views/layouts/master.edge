@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Document Manager</title>
+</head>
+<body>
+  <header>
+    <h3><a style="text-decoration: none; color: #333" href="{{route('home.index')}}">Document Manager</a></h3>
+
+
+      <nav>
+        <h4><a style="text-decoration: none; color: #7c45cf" href="{{route('documents.create')}}">Novo Documento</a><h4>
+        <button form="logout">Sair</button>
+      </nav>
+  </header>
+
+  <div class="container">
+  @!section('content')
+  </div>
+</body>
+
+<form class="hidden-form"
+  id="logout"
+  method="POST"
+  action="{{route('sessions.destroy')}}?_method=DELETE">
+</form>
+</html>
